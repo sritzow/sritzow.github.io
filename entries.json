@@ -1,0 +1,14 @@
+{
+	"entries":[
+		{
+		"date":"03/12/2015",
+		"title":"Hello world",
+		"text":"I started blogging today!"
+		},
+		{
+		"date":"03/13/2015",
+		"title":"Second entry",
+		"text":"And so it goes..."
+		}
+	]
+}
