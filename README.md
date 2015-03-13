@@ -12,7 +12,7 @@ Have a bug or want to add something? Please create an issue or a pull request ri
 https://github.com/devCodeCamp/dcc-py-blogger
 
 
-AUTHOR
+AUTHORS
 -------
 
 **Nick Jaeger**
