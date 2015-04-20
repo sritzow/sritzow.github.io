@@ -17,13 +17,19 @@
 		},
 		{
 		"date":"04/16/2015",
-		"title":"On your own",
+		"title":"Loop de loop",
 		"text":"In class today, we worked on talking about loops, and functions. Loops are idea for shortening tasks that must be completed multiple times in a row with the same data. If we need to print out something 5 times we can make a loop that will run 5 times to complete the task with much less code. Functions are also ideal for shortening code. If we will be doing the same action many times in a program, we can make a function to call that code whenever we happen to need it. This is useful because we don't need to re-write the same thing multiple times. We went back and edited our dice program to include functions and loops to improve the efficiency of the code."
 		},
 		{
 		"date":"04/17/2015",
-		"title":"On your own",
-		"text":"Try and catches were one of the topics we discussed in class today. With these you are able to run pieces of code that may return an error at one point, such as getting user inputs. If you are trying to turn a users input into an int, you should use a try catch as if they enter a letter or other character, you will get a runtime error. By using the try, we can make sure we are recieving a valid input while converting it to the new type. This is useful for things such as file io, int conversion from strings, as well as many other uses due to the fact that they save the program from crashing."
+		"title":"Try again",
+		"text":"Try and catches were one of the topics we discussed in class today. With these you are able to run pieces of code that may return an error at one point, such as getting user inputs. If you are trying to turn a users input into an int, you should use a try catch as if they enter a letter or other character, you will get a runtime error. By using the try, we can make sure we are receiving a valid input while converting it to the new type. This is useful for things such as file io, int conversion from strings, as well as many other uses due to the fact that they save the program from crashing."
+		}
+		,
+		{
+		"date":"04/20/2015",
+		"title":"Group together",
+		"text":"Today we started working on a personal project and a group project. Our group project is a twitter streamer that will collect lots of data from specific areas and store it in a mongoDB. With this we will analyze it for common words, tags based on each area. After we analyze the data, we will display it on a website for everyone to see. My personal project is going to be a 2d minecraft game. You will be able to walk around, destroy and build bricks in a 2d environment. This will pose many challenges such as physics, basic ai for enemies as well as map generation. For the first day, I have started with map drawing and simple map generation. Once these are working, I can then move onto physics with the player."
 		}
 	]
 }
