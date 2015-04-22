@@ -34,6 +34,11 @@
 		"date":"04/21/2015",
 		"title":"Group together",
 		"text":"Today I did a code review on everyones code for the twitter streaming project. I mashed everything together and got it working as intended. I met up with everyone and explained the entire program and answered questions on each part as we went. A few things had to be changed in order to incorporate everyones task, but now it is working. After, I ran it for a while in order to test and gather some tweets. Towards the end of the day, it had gathered around 68,000 tweets. After, I worked on my personal project, doing tests with static and dynamic bodies in order to get a player able to move in the game."
+		},
+		{
+		"date":"04/22/2015",
+		"title":"Group together",
+		"text":"Class was spent mostly working on our personal and group projects today. Half way through we talked about improving our image for future job searching. We googled our names and worked on creating a good looking linkedin page. We talked about why these are useful tools when looking for a job as employers often look at these. After that we continued working on our projects. I was able to get moving and jumping finished on my 2d game along with destroying and creating blocks. When you destroy blocks you receive them in your inventory and when you place them you lose them from your inventory. Next I will need to work on displaying your inventory on screen and adding some more features."
 		}
 	]
 }
