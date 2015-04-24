@@ -44,6 +44,11 @@
 		"date":"04/23/2015",
 		"title":"Grind it out",
 		"text":"Today was a busy day. Everyone had questions about the project we were working on and I did my best to explain what needed to be done. After much discussion we were able to get through all the tasks at hand. Now it is up to me to take all the analysed data and create graphs to represent the data. I found a nice library called pygal that takes data and creates many different types of graphs to represent it. I had some trouble with loading the data back in from the database due to the data not getting structured as I thought it would and mongodb throwing in a random object into the list. I wasn't able to get any work on my personal project, but I am at a point were it would be fine to show off."
+		},
+		{
+		"date":"04/24/2015",
+		"title":"Final Stretch",
+		"text":"Today was the final stretch for our projects. We presented our personal projects in the middle of the class and explained what we did and how we utilized different libraries to get our task done. After that we finished working on our twitter analyser and I worked on creating graphs from the data we had. After I generated the graphs, I created a HTML page to host all the graphs on my GitHub. Pygal made the graph generation extremely easy and I was able to make alot of graphs to represent all of our data. We also had a small decryption project towards the end as a little end of the week challenge."
 		}
 	]
 }
