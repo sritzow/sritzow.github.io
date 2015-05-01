@@ -69,6 +69,11 @@
 		"date":"04/30/2015",
 		"title":"JS Intro",
 		"text":"Today was our start of JavaScript and jQuery. We had a good amount of small labs to do to quickly learn JavaScript. We covered if statements, case statements, while and for loops, as well as arrays and objects. JavaScript has a lot different syntax than Python such as the use of Parenthesis in if/while/for statements, as well as the use of curly braces and semicolons. After I finished up with the labs, I did research on content management systems such as Drupal and Wordpress. I also looked into the limitations of github pages. Later on I looked into AJAX for loading content after the page has been refreshed to fill HTML dynamically. This will be very useful in personal projects of mine that rely heavily on dynamic data that changes alot."
+		},
+		{
+		"date":"05/1/2015",
+		"title":"Challenge Problems",
+		"text":"Challenge problems were the topic of the day. We had a few using multidimensional arrays were we needed to print specific indexs from those array in a special order. As the arrays were multidimensional we needed multiple indexes to access the things we needed to print out. After this I worked on recoding some PHP for one of my personal websites. I am using MySQL to store data and I am using an object oriented approach to how I handle it. This will take a bit to get all the parts to work together, but it will make adding changes and getting data logs much easier with this sort of structure."
 		}
 	]
 }
