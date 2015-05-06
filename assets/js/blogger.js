@@ -36,6 +36,7 @@ function pagePosts(searchPosts, page, scroll) {
 		text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
 	}
 	
+	var under = '<p class = "lead" style = "text-align:center">';
 	for (i = 0; i < Math.ceil(searchPosts.length / 5); i++) {
 		if (i == 0 && page != 1) {
 			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (page - 1) + ', true)">Previous</span>';
@@ -51,6 +52,13 @@ function pagePosts(searchPosts, page, scroll) {
 			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (page + 1) + ', true)">Next</span>';
 		}
 	}
+	under += '</p>';
+	text += under;
+	$('#blog').fadeOut('slow', function() {
+		$('#blog').html(text).hide().fadeIn('slow');
+	});
+	if (scroll)
+		$('#blogheader')[0].scrollIntoView(true);
 }
 
 function pager(page, scroll) {
