@@ -25,6 +25,7 @@ function pager(page) {
 	
 	text += under;
 	$('#blog').html(text);
+	$('#blog')[0].scrollIntoView(true);
 }
 
 function getposts(){
