@@ -8,8 +8,7 @@ function getposts(){
 			console.log(key + ' -- ' + value);
 			var date = value['date'];
 			var title = value['title'];
-			var post = value['text'];
-			console.log(date + ' - ' + title + ' - ' + post);
+			var text = value['text'];
 			posts += "<div id='key' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + post + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>";
 		});
 		
