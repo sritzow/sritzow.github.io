@@ -3,10 +3,11 @@ $(document).ready(getposts);
 var posts = [];
 
 $('#search-second').bind('input', function() {
-	var search = $('search-second').val();
+	var search = $('#search-second').val();
 	
 	if (search != null && search.length > 0) {
 		var newPosts = getSearchPosts();
+		$('#information').hide();
 		pagePosts(newPosts, 1, true);
 	} else {
 		$('#information').show();
@@ -18,7 +19,6 @@ function getSearchPosts() {
 	var search = $('#search-second').val();
 	
 	if (search != null && search.length > 0) {
-		$('#information').hide();
 		var newPosts = [];
 		for (var post in posts) {
 			if (posts[post].indexOf(search) != -1) {
