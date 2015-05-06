@@ -2,7 +2,7 @@ $(document).ready(getposts);
 
 var posts = [];
 
-function pager(page) {
+function pager(page, scroll) {
 	var text = "";
 	
 	var under = '<p class = "lead" style = "text-align:center">';
@@ -15,9 +15,9 @@ function pager(page) {
 	
 	for (i = 0; i < Math.ceil(posts.length / 5); i++) {
 		if (i + 1 == page) {
-			under += ' <span onclick = "pager(' + (i + 1) + ')" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
+			under += ' <span onclick = "pager(' + (i + 1) + ', true)" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
 		} else {
-			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ')">' + (i + 1) + '</span>';
+			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ', true)">' + (i + 1) + '</span>';
 		}
 	}
 	
@@ -39,6 +39,6 @@ function getposts(){
 			posts.push("<div id='key' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + date + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>");
 		});
 		
-		pager(1);
+		pager(1, false);
 	});
 }
