@@ -2,6 +2,57 @@ $(document).ready(getposts);
 
 var posts = [];
 
+$('search-second').bind('input', function() {
+	var search = $('search-second').val();
+	
+	if (search.length > 0) {
+		new newPosts = getSearchPosts();
+		pagePosts(newPosts, 1, true);
+	} else {
+		$('information').show();
+		pagePosts(posts, 1, true);
+	}
+});
+
+function getSearchPosts() {
+	var search = $('search-second').val();
+	
+	if (search.length > 0) {
+		$('information').hide();
+		var newPosts = [];
+		for (var post in posts) {
+			if (posts[post].indexOf(search) != -1) {
+				newPosts.push(posts[post]);
+			}
+		}
+		return newPosts;
+	}
+	return null;
+}
+
+function pagePosts(searchPosts, page, scroll) {
+	var text = "";
+	for (i = (page - 1) * 5; i < (page - 1) * 5 + 5; i++) {
+		text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
+	}
+	
+	for (i = 0; i < Math.ceil(searchPosts.length / 5); i++) {
+		if (i == 0 && page != 1) {
+			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (page - 1) + ', true)">Previous</span>';
+		}
+		
+		if (i + 1 == page) {
+			under += ' <span onclick = "pager(' + (i + 1) + ', true)" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
+		} else {
+			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (i + 1) + ', true)">' + (i + 1) + '</span>';
+		}
+		
+		if (i == Math.ceil(posts.length / 5) - 1 && page != Math.ceil(posts.length / 5)) {
+			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (page + 1) + ', true)">Next</span>';
+		}
+	}
+}
+
 function pager(page, scroll) {
 	var text = "";
 	
@@ -47,9 +98,10 @@ function getposts(){
 			var date = value['date'];
 			var title = value['title'];
 			var text = value['text'];
-			posts.push("<div id='" + key + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + date + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>");
+			//posts.push("<div id='post" + key + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + date + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>");
+			posts.push(value);
 		});
-		
-		pager(1, false);
+		//pager(1, false);
+		pagePosts(posts, 1, false);
 	});
 }
