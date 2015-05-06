@@ -21,20 +21,22 @@ function getSearchPosts() {
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
-			if (posts[post]['text'].indexOf(search) != -1) {
+			if (posts[post]['text'].toLowerCase().indexOf(search.toLowerCase()) != -1) {
 				newPosts.push(posts[post]);
 			}
 		}
 		return newPosts;
 	}
-	return null;
+	return posts;
 }
 
 function pagePosts(searchPosts, page, scroll) {
 	var text = "";
 	for (i = (page - 1) * 5; i < (page - 1) * 5 + 5; i++) {
-		if (searchPosts.length > i)
-			text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
+		if (searchPosts != null) {
+			if (searchPosts.length > i)
+				text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
+		}
 	}
 	
 	var under = '<p class = "lead" style = "text-align:center">';
@@ -75,13 +77,13 @@ function pager(page, scroll) {
 	
 	for (i = 0; i < Math.ceil(posts.length / 5); i++) {
 		if (i == 0 && page != 1) {
-			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (page - 1) + ', true)">Previous</span>';
+			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(posts, ' + (page - 1) + ', true)">Previous</span>';
 		}
 		
 		if (i + 1 == page) {
 			under += ' <span onclick = "pager(' + (i + 1) + ', true)" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
 		} else {
-			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ', true)">' + (i + 1) + '</span>';
+			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(posts, ' + (i + 1) + ', true)">' + (i + 1) + '</span>';
 		}
 		
 		if (i == Math.ceil(posts.length / 5) - 1 && page != Math.ceil(posts.length / 5)) {
