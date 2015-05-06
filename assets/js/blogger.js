@@ -6,7 +6,7 @@ $('search-second').bind('input', function() {
 	var search = $('search-second').val();
 	
 	if (search.length > 0) {
-		new newPosts = getSearchPosts();
+		var newPosts = getSearchPosts();
 		pagePosts(newPosts, 1, true);
 	} else {
 		$('information').show();
