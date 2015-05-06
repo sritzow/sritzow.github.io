@@ -33,7 +33,7 @@ function pager(page, scroll) {
 	
 	text += under;
 	$('#blog').fadeOut('slow', function() {
-		$('#blog').html(text).hide().fadeIn();
+		$('#blog').html(text).hide().fadeIn('slow');
 	});
 	if (scroll)
 		$('#blogheader')[0].scrollIntoView(true);
@@ -42,12 +42,12 @@ function pager(page, scroll) {
 function getposts(){
 	console.log("loading");
 	$.get("entries.json", function( data ) {
-		var data = data['entries'];
+		var data = data['entries'].reverse();
 		$.each(data, function(key, value) {
 			var date = value['date'];
 			var title = value['title'];
 			var text = value['text'];
-			posts.push("<div id='key' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + date + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>");
+			posts.push("<div id='" + key + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + date + "</p></small><h5>" + title + "</h5><p>" + text + "</p><hr/></div>");
 		});
 		
 		pager(1, false);
