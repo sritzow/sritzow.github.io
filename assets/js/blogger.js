@@ -14,10 +14,17 @@ function pager(page, scroll) {
 	}	
 	
 	for (i = 0; i < Math.ceil(posts.length / 5); i++) {
+		if (i != 0 && page != 1) {
+			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ', true)">Previous</span>';
+		}
 		if (i + 1 == page) {
 			under += ' <span onclick = "pager(' + (i + 1) + ', true)" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
 		} else {
 			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ', true)">' + (i + 1) + '</span>';
+		}
+		
+		if (i == Math.ceil(posts.length / 5) - 1 && page != Math.ceil(posts.length / 5) - 1) {
+			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ', true)">Next</span>';
 		}
 	}
 	
