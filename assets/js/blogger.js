@@ -32,7 +32,9 @@ function pager(page, scroll) {
 	under += '</p>';
 	
 	text += under;
-	$('#blog').fadeOut().html(text).fadeIn();
+	$('#blog').fadeOut('slow', function() {
+		$('#blog').html(text).hide().fadeIn();
+	});
 	if (scroll)
 		$('#blogheader')[0].scrollIntoView(true);
 }
