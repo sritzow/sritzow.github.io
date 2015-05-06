@@ -21,7 +21,7 @@ function getSearchPosts() {
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
-			if (posts[post].indexOf(search) != -1) {
+			if (posts[post]['text'].indexOf(search) != -1) {
 				newPosts.push(posts[post]);
 			}
 		}
