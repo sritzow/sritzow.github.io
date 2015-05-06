@@ -5,6 +5,7 @@ var posts = [];
 function pager(page) {
 	var text = "";
 	for (i = (page - 1 * 5); i < (page - 1 * 5) + 5; i++) {
+		console.log(i + ' - ' + posts[i]);
 		text += posts[i];
 	}	
 	$('#blog').html(text);
