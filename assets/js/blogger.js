@@ -33,7 +33,8 @@ function pager(page, scroll) {
 	
 	text += under;
 	$('#blog').html(text);
-	$('#blogheader')[0].scrollIntoView(true);
+	if (scroll)
+		$('#blogheader')[0].scrollIntoView(true);
 }
 
 function getposts(){
