@@ -13,7 +13,6 @@ function pager(page) {
 function getposts(){
 	console.log("loading");
 	$.get("entries.json", function( data ) {
-		var posts = "";
 		var data = data['entries'];
 		$.each(data, function(key, value) {
 			var date = value['date'];
