@@ -33,7 +33,8 @@ function getSearchPosts() {
 function pagePosts(searchPosts, page, scroll) {
 	var text = "";
 	for (i = (page - 1) * 5; i < (page - 1) * 5 + 5; i++) {
-		text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
+		if (searchPosts.length > i)
+			text += "<div id='post" + i + "' class='col-sm-12 blogpost'><small> <p class='muted' style='float:right;'>" + searchPosts[i]['date'] + "</p></small><h5>" + searchPosts[i]['title'] + "</h5><p>" + searchPosts[i]['text'] + "</p><hr/></div>";
 	}
 	
 	var under = '<p class = "lead" style = "text-align:center">';
