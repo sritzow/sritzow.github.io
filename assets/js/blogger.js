@@ -4,12 +4,26 @@ var posts = [];
 
 function pager(page) {
 	var text = "";
+	
+	var under = '<p class = "lead">';
 	for (i = (page - 1) * 5; i < (page - 1) * 5 + 5; i++) {
 		if (posts.length > i) {
 			console.log(i + ' - ' + posts[i]);
 			text += posts[i];
 		}
 	}	
+	
+	for (i = 0; i < Math.ceil(posts.length / 5); i++) {
+		if (i + 1 == page) {
+			under += '<span style = "text-decoration:underline;">' + (i + 1) + '</span>'
+		} else {
+			under += ' ' + (i + 1);
+		}
+	}
+	
+	under += '</p>';
+	
+	text += under;
 	$('#blog').html(text);
 }
 
