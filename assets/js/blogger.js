@@ -15,9 +15,9 @@ function pager(page) {
 	
 	for (i = 0; i < Math.ceil(posts.length / 5); i++) {
 		if (i + 1 == page) {
-			under += '<span onclick = "pager(' + (i + 1) + ')" style = "text-decoration:underline;">' + (i + 1) + '</span>'
+			under += ' <span onclick = "pager(' + (i + 1) + ')" style = "cursor: pointer; text-decoration:underline;">' + (i + 1) + '</span>'
 		} else {
-			under += ' <span onclick = "pager(' + (i + 1) + ')">' + (i + 1) + '</span>';
+			under += ' <span style = "cursor: pointer;" onclick = "pager(' + (i + 1) + ')">' + (i + 1) + '</span>';
 		}
 	}
 	
