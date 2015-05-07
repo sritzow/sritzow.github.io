@@ -25,7 +25,9 @@ function getSearchPosts() {
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
+			console.log(search);
 			var postLower = posts[post]['text'].toLowerCase().replace(' ', '');
+			console.log(postLower);
 			if (postLower.search(search) != -1) {
 				newPosts.push(posts[post]);
 			}
