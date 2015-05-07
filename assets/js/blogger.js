@@ -141,6 +141,7 @@ function pager(page, scroll) {
 function getposts(){
 	console.log("loading");
 	$.get("entries.json", function( data ) {
+		console.log(data);
 		var data = data['entries'].reverse();
 		$.each(data, function(key, value) {
 			console.log(value);
