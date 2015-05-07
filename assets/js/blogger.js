@@ -16,17 +16,17 @@ $('#search-second').bind('input', function() {
 });
 
 $('#search2').bind('input', function() {
-	console.log($('#search2').val());
-	$('#search-second').append($('#search2').val()).focus();
+	$('#search-second').val($('#search-second').val() + $('#search2').val()).focus();
 	$('#search2').val('');
 });
 
 function getSearchPosts() {
-	var search = $('#search-second').val();
+	var search = $('#search-second').val().toLowerCase().replace(' ', '');
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
-			if (posts[post]['text'].toLowerCase().indexOf(search.toLowerCase()) != -1) {
+			var postLower = posts[post]['text'].toLowerCase().replace(' ', '');
+			if (postLower.search(search) != -1) {
 				newPosts.push(posts[post]);
 			}
 		}
