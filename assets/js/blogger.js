@@ -3,6 +3,17 @@ $(document).ready(getposts);
 var posts = [];
 
 $('#search-second').bind('input', function() {
+	search();
+});
+
+
+$('#search2').bind('input', function() {
+	$('#search-second').val($('#search-second').val() + $('#search2').val()).focus();
+	$('#search2').val('');
+	search();
+});
+
+function search() {
 	var search = $('#search-second').val();
 	
 	if (search != null && search.length > 0) {
@@ -13,21 +24,14 @@ $('#search-second').bind('input', function() {
 		$('#information').show('slow');
 		pagePosts(posts, 1, true);
 	}
-});
-
-$('#search2').bind('input', function() {
-	$('#search-second').val($('#search-second').val() + $('#search2').val()).focus();
-	$('#search2').val('');
-});
+}
 
 function getSearchPosts() {
 	var search = $('#search-second').val().toLowerCase().replace(/ /g, '');
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
-			console.log(search);
 			var postLower = posts[post]['text'].toLowerCase().replace(/ /g, '');
-			console.log(postLower);
 			if (postLower.search(search) != -1) {
 				newPosts.push(posts[post]);
 			}
