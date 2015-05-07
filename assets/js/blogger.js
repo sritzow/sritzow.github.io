@@ -21,12 +21,12 @@ $('#search2').bind('input', function() {
 });
 
 function getSearchPosts() {
-	var search = $('#search-second').val().toLowerCase().replaceAll(' ', '');
+	var search = $('#search-second').val().toLowerCase().replace(/ /g, '');
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
 			console.log(search);
-			var postLower = posts[post]['text'].toLowerCase().replaceAll(' ', '');
+			var postLower = posts[post]['text'].toLowerCase().replace(/ /g, '');
 			console.log(postLower);
 			if (postLower.search(search) != -1) {
 				newPosts.push(posts[post]);
