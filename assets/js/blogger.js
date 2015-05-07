@@ -15,9 +15,13 @@ $('#search-second').bind('input', function() {
 	}
 });
 
+$('#search2').bind('input', function() {
+	$('#search-second').append($('#search2').val()).focus();
+	$('#search2').val('');
+});
+
 function getSearchPosts() {
 	var search = $('#search-second').val();
-	
 	if (search != null && search.length > 0) {
 		var newPosts = [];
 		for (var post in posts) {
