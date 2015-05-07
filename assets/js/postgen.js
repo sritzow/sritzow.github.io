@@ -39,7 +39,7 @@ function post(){
     $.each(data.entries, function(key, val) {
       var single = '{"t":"' + val.t + '", "h":"' + val.h + '", "c":"' + val.c + '"}';
       $("#json").append(single);
-      if((data.posts.length - 1) != key){
+      if((data.entries.length - 1) != key){
         $("#json").append(',<br />');
       } else {
         $("#json").append(',<br />');
