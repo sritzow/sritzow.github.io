@@ -143,6 +143,7 @@ function getposts(){
 	$.get("entries.json", function( data ) {
 		var data = data['entries'].reverse();
 		$.each(data, function(key, value) {
+			console.log(value);
 			var date = value['date'];
 			var title = value['title'];
 			var text = value['text'];
