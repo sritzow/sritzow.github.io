@@ -10,7 +10,7 @@ $('#search-second').bind('input', function() {
 		$('#information').hide('slow');
 		pagePosts(newPosts, 1, true);
 	} else {
-		$('#information').fadeIn('slow');
+		$('#information').show('slow');
 		pagePosts(posts, 1, true);
 	}
 });
