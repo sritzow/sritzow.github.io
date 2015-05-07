@@ -37,7 +37,7 @@ function post(){
   $("#json").append('{"entries":['  + '<br />');
   $.getJSON('entries.json', function(data) {
     $.each(data.entries, function(key, val) {
-      var single = '{"t":"' + val.date + '", "h":"' + val.title + '", "c":"' + val.text + '"}';
+      var single = '{"date":"' + val.date + '", "title":"' + val.title + '", "text":"' + val.text + '"}';
       $("#json").append(single);
       if((data.entries.length - 1) != key){
         $("#json").append(',<br />');
@@ -48,7 +48,7 @@ function post(){
         var h = $("input#h").val();
         var c = $("textarea#c").val();
         c = $("textarea#c").val().replace(/\n/g, "&lt;br&gt;");
-        var added = '{"t":"' + t + '", "h":"' + h + '", "c":"' + c + '"}';
+        var added = '{"date":"' + t + '", "title":"' + h + '", "text":"' + c + '"}';
         $("#json").append(added);
         $("#json").append('<br />]}');
       }
