@@ -56,7 +56,7 @@ function pagePosts(searchPosts, page, scroll) {
 			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (i + 1) + ', true)">' + (i + 1) + '</span>';
 		}
 		
-		if (i == Math.ceil(posts.length / 5) - 1 && page != Math.ceil(posts.length / 5)) {
+		if (i == Math.ceil(searchPosts.length / 5) - 1 && page != Math.ceil(searchPosts.length / 5)) {
 			under += ' <span style = "cursor: pointer;" onclick = "pagePosts(getSearchPosts(), ' + (page + 1) + ', true)">Next</span>';
 		}
 	}
