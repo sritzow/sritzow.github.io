@@ -34,7 +34,7 @@ function getdate(){
 }
 
 function post(){
-  $("#json").append('{"posts":['  + '<br />');
+  $("#json").append('{"entries":['  + '<br />');
   $.getJSON('entries.json', function(data) {
     $.each(data.posts, function(key, val) {
       var single = '{"t":"' + val.t + '", "h":"' + val.h + '", "c":"' + val.c + '"}';
