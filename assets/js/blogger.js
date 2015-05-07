@@ -7,10 +7,10 @@ $('#search-second').bind('input', function() {
 	
 	if (search != null && search.length > 0) {
 		var newPosts = getSearchPosts();
-		$('#information').hide();
+		$('#information').hide('slow');
 		pagePosts(newPosts, 1, true);
 	} else {
-		$('#information').show();
+		$('#information').fadeIn('slow');
 		pagePosts(posts, 1, true);
 	}
 });
