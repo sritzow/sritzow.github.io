@@ -53,7 +53,7 @@ function preg_quote( str ) {
 
 function highlight( data, search )
 {
-    return data.replace( new RegExp( "(" + preg_quote( search ) + ")" , 'gi' ), "<b>$1</b>" );
+    return data.replace( new RegExp( "(" + preg_quote( search ) + ")" , 'gi' ), "<span style = \"background-color: #FFFA66\">$1</span>" );
 }
 
 function pagePosts(searchPosts, page, scroll) {
